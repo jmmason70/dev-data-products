@@ -1,0 +1,27 @@
+---
+title: "Apple Store Locations in Metro Atlanta"
+author: "Jeffrey Mason"
+date: "March 29, 2018"
+output: html_document
+---
+
+```{r, echo=FALSE}
+library(leaflet)
+set.seed(2018-03-29)
+AppleSites <- c(
+  "<a href='https://www.apple.com/retail/lenoxsquare'>Apple Lenox Square Store</a>",
+  "<a href='https://www.apple.com/retail/cumberlandmall/'>Apple Cumberland Store</a>",
+  "<a href='https://www.apple.com/retail/perimeter/'>Apple Perimeter Store</a>",
+  "<a href='https://www.apple.com/retail/avalon/'>Apple Avalon Store</a>",
+  "<a href='https://www.apple.com/retail/mallofgeorgia/'>Apple Mall of Georgia Store</a>")
+
+AppleStoresLatLong <- data.frame(
+  lat = c(33.8475719, 33.8804303, 33.9237698, 34.070554, 34.0642949),
+  lng = c(-84.3619536, -84.4687488, -84.3408457, -84.2747484, -83.982776)
+)
+
+AppleStoresLatLong %>%
+  leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(popup=AppleSites)
+```
