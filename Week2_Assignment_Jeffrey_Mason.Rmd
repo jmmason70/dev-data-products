@@ -1,10 +1,15 @@
 ---
 title: "Apple Store Locations in Metro Atlanta"
 author: "Jeffrey Mason"
-date: "March 29, 2018"
+date: "March 30, 2018"
 output: html_document
 ---
-###Hello!  This interactive map will show you all of the Apple Store locations in the Metro Atlanta area.  If you click on each marker, the store name will pop up.  If you click on the store name, it will open a web browser and show you more information about each store.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Hello!  This interactive map will show you all of the Apple Store locations in the Metro Atlanta area.  If you click on each marker, the store name will pop up.  If you click on the store name, it will open a web browser and show you more information about each store.
 
 ```{r, echo=FALSE}
 library(leaflet)
