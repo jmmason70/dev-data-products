@@ -1,0 +1,30 @@
+---
+title: "Average Heights and Weights for American Women"
+author: "Jeffrey Mason"
+date: "April 2, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Hello!  This interactive plot will show you the average heights and weights for American women.
+
+
+
+```{r women}
+summary(women)
+```
+
+
+```{r, echo=FALSE, message=FALSE}
+library(plotly)
+data(women)
+plot_ly(women, x=~height, y=~weight, mode="markers") %>%
+layout(
+  title = "Average Heights and Weights for American Women")
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
